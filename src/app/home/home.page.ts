@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { register } from 'swiper/element/bundle';
 
+register();
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +10,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
-
+  constructor(private route: Router) {}
+ 
+  navigate(){
+    this.route.navigateByUrl('login')
+  }
 }
